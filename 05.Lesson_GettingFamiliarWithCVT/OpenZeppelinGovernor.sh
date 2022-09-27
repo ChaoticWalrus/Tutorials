@@ -1,6 +1,6 @@
 certoraRun certora/harnesses/ERC20VotesHarness.sol certora/harnesses/GovernorHarness.sol \
     --verify GovernorHarness:certora/specs/GovernorBase.spec \
-    --solc solc8.0 \
+    --solc solc-0.8.0 \
     --optimistic_loop \
     --settings -copyLoopUnroll=4 \
     --rule voteStartBeforeVoteEnd \

@@ -4,13 +4,13 @@
 
 		To run, execute the following command in terminal/cmd:
 
-		certoraRun Bank.sol --verify Bank:IntegrityOfDeposit.spec --solc solc7.6
+		certoraRun Bank.sol --verify Bank:IntegrityOfDeposit.spec --solc solc-0.7.6
 
 		A simple rule that checks the integrity of the deposit function. 
 
 		Understand the counter example and then rerun:
 
-		certoraRun BankFixed.sol:Bank --verify Bank:IntegrityOfDeposit.spec --solc solc7.6
+		certoraRun BankFixed.sol:Bank --verify Bank:IntegrityOfDeposit.spec --solc solc-0.7.6
 
 **/
 

@@ -1,7 +1,7 @@
 certoraRun verification/harnesses/SymbolicVault.sol verification/harnesses/MultiDistributorHarness.sol \
   verification/harnesses/SymbolicERC20A.sol verification/harnesses/SymbolicERC20B.sol \
   --verify MultiDistributorHarness:verification/specs/multiDistributorRules.spec \
-  --solc solc7.6 \
+  --solc solc-0.7.6 \
   --rule transition_DistFinished_To_DistActive \
   --rule_sanity \
   --optimistic_loop \

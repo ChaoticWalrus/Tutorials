@@ -6,7 +6,7 @@ fi
 certoraRun contracts/Pool.sol contracts/Asset_ERC20.sol contracts/SymbolicFlashLoanReceiver.sol \
     --link Pool:asset=Asset_ERC20 \
 	--verify Pool:highLevel.spec $RULE \
-    --solc solc8.0 \
+    --solc solc-0.8.0 \
     --staging  \
     --msg "Abstract Pool, highLevel.spec multiAssertCheck  " \
     --settings -multiAssertCheck 

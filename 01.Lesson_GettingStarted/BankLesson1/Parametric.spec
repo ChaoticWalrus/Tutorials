@@ -6,11 +6,11 @@
 		you can define a method argument in the rule and use it in a statement.
 
 		Run:
-		 	certoraRun BankFixed.sol:Bank --verify Bank:Parametric.spec --solc solc7.6
+		 	certoraRun BankFixed.sol:Bank --verify Bank:Parametric.spec --solc solc-0.7.6
 		
 		It discovers an issue in transfer.
 		Run also:
-		 	certoraRun Bank.sol --verify Bank:Parametric.spec --solc solc7.6
+		 	certoraRun Bank.sol --verify Bank:Parametric.spec --solc solc-0.7.6
 		See that this rule also uncovers the issue detected by the integrity of deposit rule.
 		
 

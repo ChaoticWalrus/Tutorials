@@ -1,6 +1,6 @@
 certoraRun PopsicleFixed.sol ../Receiver.sol  \
 	--verify PopsicleFixed:PopsicleAnswer.spec \
-	--solc solc8.4 \
+	--solc solc-0.8.4 \
 	--optimistic_loop \
 	--send_only \
 	--cloud \
@@ -9,7 +9,7 @@ certoraRun PopsicleFixed.sol ../Receiver.sol  \
 
 certoraRun ../Popsicle.sol  ../Receiver.sol  \
 	--verify Popsicle:PopsicleAnswer.spec \
-	--solc solc8.4 \
+	--solc solc-0.8.4 \
 	--optimistic_loop \
 	--send_only \
 	--cloud \

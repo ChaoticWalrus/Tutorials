@@ -50,7 +50,7 @@ We will learn more about this topic in the next lesson.
 To use the Certora Prover on this contract, run the following command line:
 
 ```sh
-certoraRun Bank.sol --verify Bank:IntegrityOfDeposit.spec --solc solc7.6
+certoraRun Bank.sol --verify Bank:IntegrityOfDeposit.spec --solc solc-0.7.6
 ```
 
 This command triggers a verification run on the contract `Bank` in the solidity file `Bank.sol`, checking all rules in the specification file. 
@@ -114,7 +114,7 @@ So, what's the bug?
 Let's “fix” the overflow bug in the code and rerun the rule:
 
 ```sh 
-certoraRun BankFixed.sol:Bank --verify Bank:IntegrityOfDeposit.spec --solc solc7.6
+certoraRun BankFixed.sol:Bank --verify Bank:IntegrityOfDeposit.spec --solc solc-0.7.6
 ```
 
 No violations were found. Great!
@@ -130,7 +130,7 @@ Let’s define [another property](TotalGreaterThanUser.spec) and verify that aft
 run:
 
 ```sh
-certoraRun BankFixed.sol:Bank --verify Bank:TotalGreaterThanUser.spec --solc solc7.6 --rule totalFundsAfterDeposit
+certoraRun BankFixed.sol:Bank --verify Bank:TotalGreaterThanUser.spec --solc solc-0.7.6 --rule totalFundsAfterDeposit
 ```
 
 > :bulb: Notice the useful flag `--rule` that allows running one rule from the entire spec file.
@@ -157,7 +157,7 @@ require  getTotalFunds(e) >= getFunds(e, e.msg.sender);
 The prover will now assume that in the initial state, before calling `deposit()`, the total funds are at least the user's funds. Run the entire spec:
 
 ```sh
-certoraRun BankFixed.sol:Bank --verify Bank:TotalGreaterThanUser.spec --solc solc7.6 --msg "running with precondition"
+certoraRun BankFixed.sol:Bank --verify Bank:TotalGreaterThanUser.spec --solc solc-0.7.6 --msg "running with precondition"
 ```
 
 > :bulb: The `--msg` flag adds a message description to your run. 
@@ -187,7 +187,7 @@ Different functions in the contract might have a different number or types of pa
 Run the parametric rule from [parametric.spec](Parametric.spec)
 
 ```sh
-certoraRun BankFixed.sol:Bank --verify Bank:Parametric.spec --solc solc7.6 --msg "parametric rule on BankFixed"
+certoraRun BankFixed.sol:Bank --verify Bank:Parametric.spec --solc solc-0.7.6 --msg "parametric rule on BankFixed"
 ```
 
 The rule would be thumbs-up only if it was verified on all methods. 
@@ -201,7 +201,7 @@ One can transfer funds to himself to gain more assets.
 Run this rule on the original Bank version:
 
 ```sh
-certoraRun Bank.sol --verify Bank:Parametric.spec --solc solc7.6 --msg "parametric rule on Bank"
+certoraRun Bank.sol --verify Bank:Parametric.spec --solc solc-0.7.6 --msg "parametric rule on Bank"
 ```
 
 Notice that this rule uncovers the bug detected by P1: integrity of deposit.

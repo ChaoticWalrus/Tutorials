@@ -6,7 +6,7 @@ fi
 
 certoraRun tokens/doYouTrustMe1.sol:ERC20Basic  \
     --verify ERC20Basic:erc20.spec $RULE  \
-    --solc solc8.12 \
+    --solc solc-0.8.12 \
     --cloud \
     --send_only \
     --optimistic_loop \
@@ -14,7 +14,7 @@ certoraRun tokens/doYouTrustMe1.sol:ERC20Basic  \
 
 certoraRun tokens/doYouTrustMe2.sol:ERC20Basic  \
     --verify ERC20Basic:erc20.spec $RULE  \
-    --solc solc8.12 \
+    --solc solc-0.8.12 \
     --cloud \
     --send_only \
     --optimistic_loop \
