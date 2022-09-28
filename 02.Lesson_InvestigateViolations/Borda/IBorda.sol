@@ -1,16 +1,16 @@
 pragma solidity ^0.7.0;
 
-/** Broda Election Overview
- * @dev This contract simulate a Borda election.
+/** Borda Election Overview
+ * @dev This contract simulates a Borda election.
  * 
  *
  * The election system follows the following rules:
  *
  * - Every user with an etheruem address is allowed to vote in the elections.
  * - A voter must register its address with some pesonal detail.
- * - Once a voter has registered he/she's allowed to vote once to 3 distinct contenders as he/she wishes.
+ * - Once a voter has registered he/she's allowed to vote once for 3 distinct contenders as he/she wishes.
  * - The voter's 1st choice gets 3 points, their 2nd choice gets 2 points, and their 3rd choice gets 1 point.
- * - The 3 contenders has to be registerd as contenders.
+ * - The 3 contenders have to be registerd as contenders.
  * - If a voter tries to vote a second time, he/she will be warned.
  * - If the voter reachs a 3rd attempt to vote, they will be black listed and punished financially in the future.
  * - Contenders are allowed to vote as long as they follow all the rules specified above.
