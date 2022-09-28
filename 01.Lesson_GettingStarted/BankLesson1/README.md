@@ -194,10 +194,6 @@ The rule would be thumbs-up only if it was verified on all methods.
 An inner rule is created for every function in the main contract, as shown in the lower table.
 Click on the function name to see the counter-example.
 
-By generalizing this rule to all functions, we discovered another issue in `transfer`. 
-Again, adding local variables can aid in understanding violations.
-One can transfer funds to himself to gain more assets. 
-
 Run this rule on the original Bank version:
 
 ```sh
@@ -205,6 +201,10 @@ certoraRun Bank.sol --verify Bank:Parametric.spec --solc solc-0.7.6 --msg "param
 ```
 
 Notice that this rule uncovers the bug detected by P1: integrity of deposit.
+
+By generalizing this rule to all functions, we discovered another issue in `transfer`. 
+Again, adding local variables can aid in understanding violations.
+One can transfer funds to himself to gain more assets. 
 
 Parametric rules enable expressing reusable and concise correctness conditions. 
 Note that they are not dependent on the implementation. 
