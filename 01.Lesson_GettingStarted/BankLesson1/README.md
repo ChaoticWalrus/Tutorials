@@ -56,7 +56,7 @@ certoraRun Bank.sol --verify Bank:IntegrityOfDeposit.spec --solc solc-0.7.6
 This command triggers a verification run on the contract `Bank` in the solidity file `Bank.sol`, checking all rules in the specification file. 
 
 The command proceeds in two steps:
-1. First, the solidity files are compiled with the specified solidity compiler, in this case 7.6, and the specification file is checked for syntax errors. This step happens on the local machine for fast feedback.
+1. First, the solidity files are compiled with the specified solidity compiler, in this case 0.7.6, and the specification file is checked for syntax errors. This step happens on the local machine for fast feedback.
 
 2. Next, all necessary files are compressed and sent to Certora’s web server for verification. Verification tasks can be very heavy, so running them on the cloud can save time and resources.
 
