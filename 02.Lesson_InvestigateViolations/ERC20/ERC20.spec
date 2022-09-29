@@ -5,7 +5,7 @@
  * we specify (or selecting) to address one particular path - when the f.selector was a specific function.
  */
 
-// Checks that the sum of sender and recipient accounts remains the same after transfer(), i.e. assets doesn't disappear nor created out of thin air
+// Checks that the sum of sender and recipient accounts remains the same after transfer(), i.e. assets doesn't disappear nor are created out of thin air
 rule integrityOfTransfer(address recipient, uint256 amount) {
 	env e;
 	uint256 balanceSenderBefore = balanceOf(e, e.msg.sender);
@@ -16,7 +16,7 @@ rule integrityOfTransfer(address recipient, uint256 amount) {
 }
 
 
-// Checks that transferFrom() correctly decrease allowance of e.msg.sender
+// Checks that transferFrom() correctly decreases the allowance of e.msg.sender
 rule integrityOfTransferFrom(address owner, address recipient, uint256 amount) {
 	env e;
     require owner != recipient; // why is that necessary? try commenting this line out and see what happens
@@ -36,12 +36,12 @@ rule integrityOfIncreaseAllowance(address spender, uint256 amount) {
 	uint256 allowanceAfter = allowance(e, e.msg.sender, spender);
 
 	assert amount > 0 => (allowanceAfter > allowanceBefore), "allowance did not increase";
-    // Can you think of a way to strengthen this assert to account to all possible amounts?
+    // Can you think of a way to strengthen this assert to account for all possible amounts?
 }
 
 
-// Users' balance can be changed only as a result of transfer(), transderFrom(), mint(), burn()
-rule balanceChangesFromCertainFunctions(method f, address user){
+// Users' balance can be changed only as a result of transfer(), transferFrom(), mint(), burn()
+rule balanceChangesFromCertainFunctions(method f, address user) {
     env e;
     calldataarg args;
     uint256 userBalanceBefore = balanceOf(e, user);
@@ -59,7 +59,7 @@ rule balanceChangesFromCertainFunctions(method f, address user){
 
 // Checks that the totalSupply of the token is at least equal to a single user's balance
 // This rule breaks also on a fixed version of ERC20 -
-// why? understand the infeasible state that the rule start with 
+// why? understand the infeasible state that the rule starts with 
 rule totalSupplyNotLessThanSingleUserBalance(method f, address user) {
 	env e;
 	calldataarg args;
