@@ -1,20 +1,20 @@
 pragma solidity ^0.8.7;
 
 /** Meeting Scheduler Overview
- * @dev This contract simulate a meeting scheduler for various uses.
+ * @dev This contract simulates a meeting scheduler for various uses.
  * 
- * The scheduler follows a very clear path through different states of meeting's life.
- * The system allows one to create a schedule, defining start & end of the meeting.
+ * The scheduler follows a very clear path through different states of a meeting's life.
+ * The system allows one to create a schedule, defining the start & end of the meeting.
  * The scheduler also tracks the number of participants attending the meeting.
  *
- * - The meetings in the system are going through the following states - before creation they are
+ * - Meetings in the system go through the following states - before creation they are
  * classified as UNINITIALIZED.
  *
- * - At creation the state change to PENDING, the start & end time are being set according to 
- * organizer's order, and the num of participants are nullified.
+ * - At creation the state changes to PENDING, the start & end time are set according to the
+ * organizer's order, and the num of participants is nullified.
  *
- * - At this point a meeting can be started by anybody if start time has arrived (change to STARTED),
- * or be cancelled (change to CANCELLED) by owner. A meeting that has already occured can not be labeld CANCELLED.
+ * - At this point a meeting can be started by anybody if the start time has arrived (change to STARTED),
+ * or be cancelled (change to CANCELLED) by owner. A meeting that has already occured can not be labelled CANCELLED.
  *
  * - In case that the meeting has already started and the end time arrived, anybody can change the status
  * to ENDED.
@@ -33,7 +33,7 @@ interface IMeetingScheduler {
     struct ScheduledMeeting {
         uint256 startTime;
         uint256 endTime;
-        uint256 numOfParticipents;
+        uint256 numOfParticipants;
         address organizer;
         MeetingStatus status;
     }
@@ -54,7 +54,7 @@ interface IMeetingScheduler {
     function getEndTimeById(uint256 meetingId) external view returns (uint256);
 
     // Gets the number of participants of a specified meetingId
-    function getNumOfParticipents(uint256 meetingId)
+    function getNumOfParticipants(uint256 meetingId)
         external
         view
         returns (uint256);

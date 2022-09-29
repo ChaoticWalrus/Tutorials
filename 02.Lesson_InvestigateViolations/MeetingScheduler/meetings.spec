@@ -78,9 +78,9 @@ rule checkPendingToCancelledOrStarted(method f, uint256 meetingId) {
 rule monotonousIncreasingNumOfParticipants(method f, uint256 meetingId) {
 	env e;
 	calldataarg args;
-	uint256 numOfParticipantsBefore = getNumOfParticipents(e, meetingId);
+	uint256 numOfParticipantsBefore = getNumOfParticipants(e, meetingId);
 	f(e, args);
-    uint256 numOfParticipantsAfter = getNumOfParticipents(e, meetingId);
+    uint256 numOfParticipantsAfter = getNumOfParticipants(e, meetingId);
 
 	assert numOfParticipantsBefore <= numOfParticipantsAfter, "the number of participants decreased as a result of a function call";
 }
