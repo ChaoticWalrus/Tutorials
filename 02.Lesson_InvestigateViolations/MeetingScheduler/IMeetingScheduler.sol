@@ -14,7 +14,7 @@ pragma solidity ^0.8.7;
  * organizer's order, and the num of participants is nullified.
  *
  * - At this point a meeting can be started by anybody if the start time has arrived (change to STARTED),
- * or be cancelled (change to CANCELLED) by owner. A meeting that has already occured can not be labelled CANCELLED.
+ * or be cancelled (change to CANCELLED) by owner. A meeting that has already occured cannot be labelled CANCELLED.
  *
  * - In case that the meeting has already started and the end time arrived, anybody can change the status
  * to ENDED.
@@ -65,7 +65,7 @@ interface IMeetingScheduler {
         view
         returns (address);
 
-    // Creates a registry of meetingId in the map and updating its details.
+    // Creates a registry of meetingId in the map and updates its details.
     function scheduleMeeting(
         uint256 meetingId,
         uint256 startTime,
