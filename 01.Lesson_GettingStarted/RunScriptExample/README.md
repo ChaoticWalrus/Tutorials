@@ -54,11 +54,11 @@ sh  RunScriptExample/verifyIntegrityOfDeposit.sh "This is a run executed through
 
 </br>
 
- - [ ] Create a script that runs the entire `TotalGreaterThanUser.spec` specification file with solidity compiler 7.5 and a message string "My first Certora shell script". Save the script in `RunScriptExample` with the name "myOwnVerificationScript1" and execute the script.
+ - [ ] Create a script that runs the entire `TotalGreaterThanUser.spec` specification file with solidity compiler 0.7.5 and a message string "My first Certora shell script". Save the script in `RunScriptExample` with the name "myOwnVerificationScript1" and execute the script.
 
 </br>
 
- - [ ] Create a script that runs the rule `validityOfTotalFundsWithVars` in `Parametric.spec` specification file with solidity compiler 7.0 and a message of your choice taken as an input. Save the script in `RunScriptExample` with the name "myOwnVerificationScript2" and execute the script.
+ - [ ] Create a script that runs the rule `validityOfTotalFundsWithVars` in `Parametric.spec` specification file with solidity compiler 0.7.0 and a message of your choice taken as an input. Save the script in `RunScriptExample` with the name "myOwnVerificationScript2" and execute the script.
  
  </br>
 
