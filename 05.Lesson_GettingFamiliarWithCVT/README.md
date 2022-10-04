@@ -11,7 +11,7 @@
 - [ ] Follow the instructions on [ScriptExercise2](ScriptExercise2) to learn how to use additional frequently used flags.
 
 - [ ] Have a look at the shell scripts lying in this directory. They are real life examples for scripts that were used to run verifications on contracts of some well known actors in the Ethereum space. </br>
-These scripts flags and features that we still haven't gone through. Try to see if you recognize the parts that we did learned about, and use the `--help` flag to read about additional flags you see if you are interested.
+These scripts flags and features that we still haven't gone through. Try to see if you recognize the parts that we learned about, and use the `--help` flag to read about additional flags you see if you are interested.
 
 > :information_source: Writing shell scripts and executing shell commands are the way to operate the Prover **at the moment**. The Certora Development team is working on a GUI that facilitate generation of the shell scripts, displaying reports with extra useful information and many more helpful features.
 
