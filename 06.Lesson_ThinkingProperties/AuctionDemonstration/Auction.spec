@@ -39,7 +39,7 @@ rule boundedSupply(method f) {
         "Cannot increase to MAX_UINT256";   
 }
 
-// A rule for verifying that any scenario preformed by some sender does not decrease the balance of any other account.
+// A rule for verifying that any scenario performed by some sender does not decrease the balance of any other account.
 rule senderCanOnlyIncreaseOthersBalance(method f, address sender, address other)
 {  
     // Assume we have two different accounts.
