@@ -165,7 +165,7 @@ invariant totalFunds_GE_single_user_funds()
     forall address user. getTotalFunds() >= getFunds(user)
 ```
 
-> :bulb: This invariant contains the quantifier `forall`. Quantifiers are supported in CVL, however they add a fair amount of complexity on the SMT, which usually make the rule timing out[^Timeout].
+> :bulb: This invariant contains the quantifier `forall`. Quantifiers are supported in CVL, however they add a fair amount of complexity on the SMT, which usually makes the rule time out[^Timeout].
 
 [^Timeout]: Timeout is an intentional stop of the run (hard stop) after a predefined amount of time due to failure to produce a result. We define such a hard stop due to [the halting problem](https://en.wikipedia.org/wiki/Halting_problem).
 
