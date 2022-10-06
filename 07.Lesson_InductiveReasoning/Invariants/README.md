@@ -156,7 +156,7 @@ As you might noticed, the syntax is fairly simple:
 > :warning: Note that the invariant is not wrapped with curly brackets.
 
 Now let's move on to a concrete example of an invariant.
-We'd like to show that the bank always holds enough funds to pay up its customers; so we may come up with the property - "the `totalFunds` in the bank is always greater or equal to a single user's balance". If we were to verify this property, an arbitrary user that would like to withdraw its funds will surely be able to do it.
+We'd like to show that the bank always holds enough funds to pay up its customers; so we may come up with the property - "the `totalFunds` in the bank is always greater than or equal to a single user's balance". If we were to verify this property, an arbitrary user that would like to withdraw its funds will surely be able to do it.
 
 The invariant would look like that:
 
@@ -171,9 +171,9 @@ invariant totalFunds_GE_single_user_funds()
 
 - [ ] Run the invariant for yourself to see the results.
 
-However, although the invariant does verify that each user's balance must be less than the `totalFunds`, it does not promise that the `totalFunds` covers the sum of all users' balances. In other words the case where there are 2 users in the system: `funds[userA] = 8`, `funds[userA] = 6` and `totalFunds = 10` is valid. This case is clearly not what we meant. Each user can withdraw its balance, but once one has withdraw, there isn't enough money in the bank to pay the other user its deserved funds.
+However, although the invariant does verify that each user's balance must be less than the `totalFunds`, it does not promise that the `totalFunds` covers the sum of all users' balances. In other words the case where there are 2 users in the system: `funds[userA] = 8`, `funds[userA] = 6` and `totalFunds = 10` is valid. This case is clearly not what we meant. Each user can withdraw its balance, but once one has withdrawn, there isn't enough money in the bank to pay the other user its deserved funds.
 
-Rethinking, we may come up with a second invariant that should always hold - "The sum over all users' balances should be less then or equal to the total funds in the system". If funds are only being transferred within the system, then equality should hold, but for our purpose we don't mind that the bank will hold extra ETH transferred from external source to make sure that the bank is solvent.
+Rethinking, we may come up with a second invariant that should always hold - "The sum over all users' balances should be less than or equal to the total funds in the system". If funds are only being transferred within the system, then equality should hold, but for our purpose we don't mind that the bank will hold extra ETH transferred from external source to make sure that the bank is solvent.
 
 To track the sum of all users' balances we'll need to use a new concept - a ghost.
 We'll learn about ghosts more profoundly in a later lesson [13.Lesson_Ghost](../../13.Lesson_Ghost), so for now follow the comments on the `.spec` file to understand what it does.
@@ -195,7 +195,7 @@ invariant totalFunds_GE_to_sum_of_all_funds()
 
 This time we make sure that there is enough money in the bank to pay all users in case everybody wants to withdraw their funds.
 
-> :bulb: Note that this invariant covers the previous one - if `totalFunds` is greater or equal to the sum of all users' balances, it's in particular greater or equal to any specific user's balance.
+> :bulb: Note that this invariant covers the previous one - if `totalFunds` is greater that or equal to the sum of all users' balances, in particular it's greater than or equal to any specific user's balance.
 
 - [ ] Run the invariant `totalFunds_GE_to_sum_of_all_funds` to see the results.
 
