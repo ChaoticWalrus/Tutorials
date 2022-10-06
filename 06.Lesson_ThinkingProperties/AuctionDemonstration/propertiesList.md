@@ -8,7 +8,7 @@ First, let us define the states of the system:
 - `defCreated` - (Created/Started) is defined as `auctions[id].end_time` is not 0.
 ```
 
-1. ***Valid state*** - `defNonCreated` => `getAuction(id)` returns all 0s. If auction values are not 0 then one can get benefits from auction multiple times, which isn't not acceptable.
+1. ***Valid state*** - `defNonCreated` => `getAuction(id)` returns all 0s. If auction values are not 0 then one can get benefits from auction multiple times, which is not acceptable.
 
 2. ***Valid state*** - `defCreated` => `auctions[id].winner != 0`. If winner is 0 then nobody will get the auction prize.
 
